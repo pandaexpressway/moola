@@ -19,6 +19,21 @@
 		?>
 
 
+    <!--STUFF-->
+        <div class="parallax-container">
+      <div class="parallax"><img src="img/cash.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Parallax</h2>
+        <p class="grey-text text-darken-3 lighten-3">Just Parallax things.</p>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="img/mon.gif"></div>
+    </div>
+
+
     	<!---FOOTER-->	
 		<?php
 		  include_once("footer.php");
@@ -30,6 +45,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script>
     $(".button-collapse").sideNav();
+    </script>
+    <script>
     $(document).ready(function(){
     $('.parallax').parallax();
     });        
