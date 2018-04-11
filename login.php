@@ -19,10 +19,13 @@
     ?>
 
       <!--MAIN-->
+  <div class="row">
 
-
-      <div class="container">
+    <div class="col s12 m4 l2"></div>
+    <div class="col s12 m4 l8">
+      <div class="container"><br>
         <div class="small card-panel white">
+          <center><img src="img/moola_gradient_1.png" width="224px" height="224px"></center>
        <form method="POST" action="#">
          <div class="input-field">
           <i class="material-icons prefix">account_circle</i>
@@ -34,11 +37,14 @@
            <input type="password" name="password" id="password" class="validate">
            <label class="active" for="password">Password</label>
          </div>
-         <button class="btn-floating btn-large waves-effect waves-light green right" name="submit"><i class="material-icons right">send</i></button><br>
+         <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Submit</button><br></center>
+          <center><br><hr><br><p>New to moola?<a href="register.php">Register here!</a></p></center>
        </form>
         </div>
       </div>
-
+    </div>
+     <div class="col s12 m4 l2"></div>
+  </div>
 
 
 
@@ -52,7 +58,7 @@
     ?>
 
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
     $(document).ready(function(){
