@@ -38,7 +38,7 @@
            <label class="active" for="password">Password</label>
          </div>
          <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Submit</button><br></center>
-          <center><br><hr><br><p>New to moola?<a href="register.php">Register here!</a></p></center>
+          <center><br><hr><br><p>New to moola?<a href="accountCreation.php">Register here!</a></p></center>
        </form>
         </div>
       </div>
