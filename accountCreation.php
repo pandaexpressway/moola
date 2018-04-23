@@ -20,7 +20,7 @@ session_start();
 			$sql = "INSERT INTO users (user,pass) VALUES('$user','$pass')"; //prepare to add stats to database table
 			mysqli_query($connection, $sql); //run the query
 			echo "Account successfully created. You're now logged-in! You will be redirected to the login page in 5 seconds.";
-			header("Refresh: 3; url=Home2.php"); //Takes users to login page in 3 secs
+			header("Refresh: 3; url=index.php"); //Takes users to login page in 3 secs
 		}
 		
 		
@@ -32,18 +32,3 @@ session_start();
 		
 		
 ?>
-
-<html>
-    <body>
-    	<form method="post" action="">
-            <label for="user">Email</label>
-            <input user="user" id="user" type="text" /><br />
-			
-			<label for="pass">Password</label>
-			<input user="pass" id="pass" type="pass" /><br />
-			
-			<input user="submit" id="submit" type="submit" value="Create Account!" /><br />
-			
-			<p>Already have an account? <a href="login.php">Log-in!</a></p>
-    </body>
-</html>
