@@ -10,7 +10,7 @@ xhr.onload = function() {                       // This will run when the ready 
     var newContent = ''; 	//Create empty variable to fill with HTML. This data will be used to fill the section with id of "content" in the HTML file
     for (var i = 0; i < responseObject.articles.length; i++) { // Loop through all events in the object
       newContent += '<div class="event">'; //add this HTML content to anything already in the newContent variable (+=)
-      newContent += '<img src="' + responseObject.articles[i].urlToImage + '" '; //go to resPonseObject, find the thing called events, use the current one (i... designated by the loop), and pull the data from the "map" key.
+      newContent += '<img class ="fix" src="' + responseObject.articles[i].urlToImage + '" '; //go to resPonseObject, find the thing called events, use the current one (i... designated by the loop), and pull the data from the "map" key.
       newContent += 'alt="' + responseObject.articles[i].title + '" />'; //set alt text using the value for the location key
       newContent += '<p><b>' + responseObject.articles[i].title + '</b><br>'; //place the value from the location key within <p> tags so we can display it directly
       newContent += '<a href="' + responseObject.articles[i].url + '" ';
@@ -25,7 +25,7 @@ xhr.onload = function() {                       // This will run when the ready 
   }
 };
 
-xhr.open('GET', 'https://newsapi.org/v2/top-headlines?q=trump&apiKey=00b3ae88769c4b8386a47032a0d365ba', true);        // Prepare the request
+xhr.open('GET', 'https://newsapi.org/v2/top-headlines?q=money&apiKey=00b3ae88769c4b8386a47032a0d365ba', true);        // Prepare the request
 xhr.send(null);                                 // Send the request
 
 // NOTE: You must run this file on a server.
@@ -55,5 +55,5 @@ xhrr.onload = function() {                       // This will run when the ready
   }
 };
 
-xhrr.open('GET', 'http://api.giphy.com/v1/gifs/search?q=trump&api_key=KzoBI80NdccXPn4oAIf2OoeQrFbtJi4y&limit=4', true);        // Prepare the request
+xhrr.open('GET', 'http://api.giphy.com/v1/gifs/search?q=money&api_key=KzoBI80NdccXPn4oAIf2OoeQrFbtJi4y&limit=4', true);        // Prepare the request
 xhrr.send(null);                                 // Send the request

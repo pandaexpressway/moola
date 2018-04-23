@@ -355,8 +355,11 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
 
         // Set chart options
         var options = {'title':'Monthly income Budget',
-                       'width':400,
-                       'height':300};
+                       'width':700,
+                       'height':500
+
+
+                     };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

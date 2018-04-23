@@ -62,8 +62,8 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
 
         // Set chart options
         var options = {'title':'Monthly income Budget',
-                       'width':400,
-                       'height':300};
+                       'width':700,
+                       'height':500};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -86,10 +86,23 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
 <!---<img src="trump.png" alt="Smiley face" height="42" width="42">
 -->
 
-<?php 
-    include_once("navigation.php");
-?>
- 
+<nav class="indigo darken-3">
+    <a href="index.php" class="brand-logo"><img src="img/moola_gradient_1.png" width="64px" height="64px"></a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="index.php" class="white-text">Home</a></li>
+      <li><a href="about.php" class="white-text">About</a></li>
+      <li><a href="how.php" class="white-text">How it Works</a></li>
+      <li><a href="login.php" class="white-text">Login</a></li>
+    </ul>
+    <ul class="green accent-2" id="mobile-demo">
+      <li><a href="index.php" class="white-text">Home</a></li>
+      <li><a href="about.php" class="white-text">About</a></li>
+      <li><a href="how.php" class="white-text">How it Works</a></li>
+      <li><a href="login.php" class="white-text">Login</a></li>
+    </ul>
+  </div>
+ </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -99,8 +112,8 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
 
       <div class="row center">
 
-        <h5 class="header col s12 light">A simple page to keep up relevant news on the leader of the free world.</h5>
-          <p>Wether you love him or hate him, you still have to know what he is doing because he is the president... </p>
+        <h5 class="header col s12 light">Todays Headlines</h5>
+
       </div>
       <div class="row center">
         <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
@@ -110,7 +123,7 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
       <br><br>
       <div class="row center">
         <h2>news</h2>
-        <section id="content"></section> <!--The JS file will load content into this section, using JSON data-->
+        <section id="content" style="width:500px,height:500px;"></section> <!--The JS file will load content into this section, using JSON data-->
 <script src="http://sulley.cah.ucf.edu/~al174346/googlechart/js/data-jsontrump4.js"></script>
 
 
