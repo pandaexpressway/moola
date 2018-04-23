@@ -8,10 +8,12 @@
         <li><a href="how.php" class="white-text">How it Works</a></li>
         <li><a href="login.php" class="white-text">Login</a></li>
       </ul>
-      <ul class="green accent-2" id="mobile-demo">
+      <ul class="side-nav green accent-2" id="mobile-demo">
         <li><a href="index.php" class="white-text">Home</a></li>
         <li><a href="about.php" class="white-text">About</a></li>
         <li><a href="how.php" class="white-text">How it Works</a></li>
         <li><a href="login.php" class="white-text">Login</a></li>
       </ul>
 </nav>
+
+
