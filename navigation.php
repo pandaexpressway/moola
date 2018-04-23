@@ -1,5 +1,5 @@
 <nav class="indigo darken-3">
-  <div class="container"
+  <div class="container">
       <a href="index.php" class="brand-logo"><img src="img/moola_gradient_1.png" width="64px" height="64px"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
