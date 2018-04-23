@@ -1,65 +1,49 @@
-
 <?php
-	if (!$_POST == ""){
-		$username = $_REQUEST["username"];
-		$password = $_REQUEST["password"];
-		$phone = $_REQUEST["phone"];
-		$phone = preg_replace('/\D+/', '', $phone);
-		$email = $_REQUEST["email"];
-		$street = $_REQUEST["street"];
-		$city = $_REQUEST["city"];
-		$zip = $_REQUEST["zip"];
-		$state = $_REQUEST["state"];
+
+
+session_start();
+	include("db_connectuser.php"); //Connects to database
+	
+	if(isset($_POST['submit'])){	//If data in form field
+		//Store form values into variables using the POST method
+		$user = $_POST['user'];
+		$pass = $_POST['pass'];
+		
+		$sql = "SELECT * FROM users WHERE user='" . $user . "' LIMIT 1"; //Check to see if account already exists
+		$result = mysqli_query($connection, $sql); //store results of query in $result var
+		
+		if (mysqli_num_rows($result) == 1){	//If at least one result
+			echo "Account already exists. Please try a new user."; //account already exists
+		
+		}else{	//If new account
+			$pass = sha1($pass);
+			$sql = "INSERT INTO users (user,pass) VALUES('$user','$pass')"; //prepare to add stats to database table
+			mysqli_query($connection, $sql); //run the query
+			echo "Account successfully created. You're now logged-in! You will be redirected to the login page in 5 seconds.";
+			header("Refresh: 3; url=Home2.php"); //Takes users to login page in 3 secs
+		}
 		
 		
-		if (!$username) {
-			print "Error: Please input a username<br>";
-		}if (!$password){
-			print "Error: Please input a password<br>";
-		}else if (!preg_match("/[A-Z]{2}/", $state)){
-			print "Error: State must use capital letters";
-		}else if (strlen($zip) != 5){
-			print "Error: Zip must be 5 numbers";
-		}else if (!preg_match("/^[a-zA-Z]+\+[0-9]+$/", $street)){
-			print "Error: Street name must begin with a letter and end with a number<br>";
-		}else if (!preg_match("/^[0-9]{10}/", $phone)){
-			print "Error: Phone Number must be 10 digits";
-	}	
-}
+	
+	} else {
+		// do nothing
+	}
 
-?>     
-
+		
+		
+?>
 
 <html>
-	<head>
-	<title> account_creation_form </title>
-	</head>
-
-	<body>
-	<form method="POST" action="">
-<fieldset>
-	<legend> Create an Account </legend>
-<label for="username">Username: </label>
-<input id="username" type="textarea" name="username"> <br/>
-
-<label for="password">Password: </label>
-<input id="passwordfield" type="textarea" name="password"> <br/>
-<label for="phone">Phone Number: </label>
-<input id="phone" type="textarea" name="phone" size="10" maxlength="10"> <br/>
-<label for="email">E-mail Address: </label>
-<input id="email" type="textarea" name="email"> <br/>
-<label for="street">Street: </label>
-<input id="street" type="textarea" name="street"> <br/>
-<label for="city">City: </label>
-<input id="city" type="textarea" name="city"> <br/>
-<label for="zip">Zip Code: </label>
-<input id="zip" type="textarea" name="zip" size="5" maxlength="5"> <br/>
-<label for="state">State: </label>
-<input id="state" type="textarea" name="state" size="2" maxlength="2"> <br/>
-<center><input id="submit" type="submit" name="submit" value="Submit"></center>
-</fieldset>
-</form>
-<a href="Home1.php">Click Here to Return to Home Page</a>
+    <body>
+    	<form method="post" action="">
+            <label for="user">Email</label>
+            <input user="user" id="user" type="text" /><br />
+			
+			<label for="pass">Password</label>
+			<input user="pass" id="pass" type="pass" /><br />
+			
+			<input user="submit" id="submit" type="submit" value="Create Account!" /><br />
+			
+			<p>Already have an account? <a href="login.php">Log-in!</a></p>
+    </body>
 </html>
-
-
