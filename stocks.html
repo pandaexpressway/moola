@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Mashup</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="parallax-container valign-wrapper">
+        <div class="parallax"><img src="img/header.png" alt="header"></div>
+    </div>
+    <BR>
+    <BR>
+    <div id="particle"></div>
+    <div id="overlay">
+
+
+<div class="container">
+        <!-- Text unput stock ticker value -->
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field col s6 offset-s3 valign">
+            <input type="text" id="stock" name="stock" />
+            <input class="button" type="button" value="submit" onclick="getFormData()" />
+        </form>
+    </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col s6 offset-s5 valign">
+                <div class="stockTick">
+                    <div class="stockPrice">
+                        <div class="stockHeading"></div>
+                        <div class="stockTime"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <span id="giphyme"></span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    function getFormData() {
+        var stock = document.getElementById('stock').value;
+
+        var url = "https://api.iextrading.com/1.0/stock/" + stock + "/batch?types=quote,chart&range=1m&last=2";
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "jsonp",
+            cache: false,
+            processData: true,
+            success: function(query) {
+                var chart = query['chart'];
+
+                var dateVal = chart[chart.length - 1]['date'];
+
+                var dateArray = dateVal.split('-');
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var year = dateArray[0];
+                var month = months[parseInt(dateArray[1]) - 1];
+                var day = dateArray[2].replace(/^0+/, '');
+                var date = month + " " + day + ", " + year;
+
+                var close = chart[chart.length - 1]['close'];
+                var change = chart[chart.length - 1]['change'];
+                var changeSign = "";
+
+                if (change >= 0) {
+                    changeSign = "+";
+                }
+
+                var heading = "<span class='stockTitle'>Stock Price</span><br />NYSE: " + stock + " $" + close + " " + changeSign + change;
+                var timeString = "(as of close on " + date + ")";
+
+                $(".stockHeading").html(heading);
+                $(".stockTime").html(timeString);
+
+
+                // GIPHY CODE
+                var gifQuery;
+
+                if (changeSign == "+") {
+                    // Bull Image Query
+                    gifQuery = "Yay";
+                } else {
+                    // Bear Image Query
+                    gifQuery = "Nooo";
+                }
+
+                request = new XMLHttpRequest;
+                request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=GCPHuZCPL3viXt1c9HNqhSkWrJdeXk67&tag=' + gifQuery, true);
+
+                request.onload = function() {
+                    if (request.status >= 200 && request.status < 400) {
+                        data = JSON.parse(request.responseText).data.image_url;
+                        console.log(data);
+                        document.getElementById("giphyme").innerHTML = '<center><img src = "' + data + '"  title="GIF via Giphy"></center>';
+                    } else {
+                        console.log('reached giphy, but API returned an error');
+                    }
+                };
+
+                request.onerror = function() {
+                    console.log('connection error');
+                };
+
+                request.send();
+            }
+        });
+    }
+    </script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="https://use.fontawesome.com/a4ccf049d8.js"></script>
+</body>
+
+</html>
