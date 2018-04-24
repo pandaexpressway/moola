@@ -1,28 +1,39 @@
-<footer class="indigo darken-3">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-	<h5 class="white-text">Contact Us</h5>
-	<ul class="white-text">
-	  <li><i class="material-icons">phone</i>&nbsp;&nbsp;(407) 906-3034</li> 
-	  <li><i class="material-icons ">location_on</i>&nbsp;&nbsp;225 E Robinson St #660, Orlando, FL 32801</li> 
-	  <li><i class="material-icons ">email</i>&nbsp;&nbsp;hello@moola.com</li>            
-      </ul>
-      </div>
-      <div class="col l4 offset-l2 s12">
-	<h5 class="white-text">Follow Us!</h5>
-	<ul>
-	  <li><a class="white-text" href="#">Facebook</a></li>
-	  <li><a class="white-text" href="#">Instagram</a></li>
-	  <li><a class="white-text" href="#">Twitter</a></li>
-	  <li><a class="white-text" href="#">LinkedIn</a></li>
-	</ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-   <a class="white-text">&#169; 2018 MOOLA. ALL RIGHTS RESERVED</a>
-    </div>
-  </div>
+<!-- Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Footer -->
+<footer class="indigo darken-4">
+<div class="container center">
+    <BR>
+    <h5 class="white-text">Contact Us</h5>
+    <ul class="white-text">
+    <li>225 E Robinson St #660</li>
+    <li>Orlando, FL 32801</li> 
+    <li>(407) 906-3034</li> 
+    <li>hello@moola.com</li>            
+    </ul>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <BR><BR>
+    <a class="blue-text">&#169; 2018 Moola. All Right Reserved.</a>
+   <BR><BR>
+</div>
 </footer>
+
+
+<style>
+  /* Style icons */
+.fa {
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+</style>
