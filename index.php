@@ -58,7 +58,7 @@
         <div class="col s12">
           <div class="card-panel">
             <div class="row">
-       <form class="s12 m4" method="POST" action="#">
+       <form class="s12 m4" method="POST" action="login.php">
             <div class="row">
         <h5><center> View Your Account</h5></center>
          <div class="input-field">
@@ -72,7 +72,7 @@
            <label class="active" for="password">Password</label>
          </div>
          <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Sign On</button><br></center>
-          <center><br><hr><p>New to moola?<a href="accountCreation.php">Register here!</a></p></center>
+          <center><br><hr><p>New to moola?<a href="registration.php">Register here!</a></p></center>
        </form>
             </div>
           </div>
