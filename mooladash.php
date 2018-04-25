@@ -63,6 +63,7 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
         // Set chart options
         var options = {'title':'Monthly income Budget',
                        'width':700,
+                       'left': 300,
                        'height':500};
 
         // Instantiate and draw our chart, passing in some options.
@@ -81,7 +82,11 @@ FROM monthlybudget') as $row) {
 }
 }
 ?>
+<style>
 
+.fix {width: 500px;}
+.poop {margin-left: 100px;}
+</style>
 </head>
 <body>
 
@@ -113,11 +118,11 @@ FROM monthlybudget') as $row) {
       <br><br>
       <h1 class="header center indigo-text">My Moolah Dashboard</h1>
       <!--Div that will hold the pie chart-->
-          <div id="chart_div"></div>
+      <div class="poop"> <div id="chart_div"></div></div>
 
 <?php
 
-echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+echo "<p>Total Amount spent:   $" . $row['SUM(bill)'] . "</p>";
 ?>
 
       <div class="row center">

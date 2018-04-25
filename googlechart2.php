@@ -69,7 +69,7 @@
               <br />
               <br />
               <div id="ab">Fetch Results By:</div><div class="table-responsive">
-                   <h3 align="center">spending management</h3><br />
+                   <h3 align="center">My Budget</h3><br />
                    <select id="fetchval" name="fetchby" style="display:table;" >
                          <option value="rent">rent</option>
                          <option value="car">car</option>
@@ -389,15 +389,19 @@ FROM monthlybudget') as $row) {
 }
 }
 ?>
+<style>
 
+.fix {width: 500px;}
+.poop {margin-left: 400px;}
+</style>
   </head>
 
   <body>
     <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+  <div class="poop">  <div id="chart_div"></div></div>
     <?php
 
-    echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+    echo "<p>Total Amount spent:   $" . $row['SUM(bill)'] . "</p>";
     ?>
     <footer class="indigo darken-3">
     <div class="container">
