@@ -7,10 +7,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
       <title> Moola</title>
 
     </head>
-
+<main>
     <body>
     	<!---NAV-->
 		<?php
@@ -18,74 +19,56 @@
 		?>
 
 
-    <!--STUFF-->
-<div class="container">
-  <div class="row">
-    <main class="col s8">
-      <h1>Basic page layout</h1>
-      <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. At certe gravius. Sic, et quidem diligentius saepiusque ista loquemur inter nos agemusque communiter. Sed erat aequius Triarium aliquid de dissensione nostra
-        iudicare. Traditur, inquit, ab Epicuro ratio neglegendi doloris.</p>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://picsum.photos/480/400">
-              <span class="card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://picsum.photos/480/400">
-              <span class="card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-          </div>
-        </div>
+<!-- Content -->
+<div class="row  light-blue lighten-4">
+  <div class="container valign-wrapper">
+    <div class="col s12">
+      <BR><BR>
+      <img class="image logo" img src="img/moola_gradient_1.png" alt="logo">
+      <center>
+      <h1> Your Personal Money Manager</h1>
+      <p>Moola is committed to saving you money and keeping your "moola" right where it needs to be...<b>in your pocket.</b></p>
+      </center>
       </div>
-    </main>
-<!--SIDEBAR LOGIN-->
-    <aside class="sidebar col s4">
-      <div class="row">
-        <div class="col s12">
-          <div class="card-panel">
-            <div class="row">
-       <form class="s12 m4" method="POST" action="loginFunc.php">
-            <div class="row">
-        <h5><center> View Your Account</h5></center>
-         <div class="input-field">
-          <i class="material-icons prefix">account_circle</i>
-           <input type="text" name="name" id="name">
-           <label class="active" for="name">Username</label>
-         </div>
-         <div class="input-field">
-          <i class="material-icons prefix">lock</i>
-           <input type="password" name="password" id="password" class="validate">
-           <label class="active" for="password">Password</label>
-         </div>
-         <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Sign On</button><br></center>
-          <center><br><hr><p>New to moola?<a href="registration.php">Register here!</a></p></center>
-       </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
   </div>
 </div>
 
-    	<!---FOOTER-->	
-		<?php
-		  include_once("footer.php");
-		?>
+<div class="row cyan darken-1 no-padding-bottom">
+  <BR><BR>
+  <div class="container valign-wrapper ">
+    <div class="col s8">
+      <h1>Moola's on a Mission</h1>
+      <p>Our mission is to save your cash and help you keep track of your expenses. We're an all in one online money manager. Seeing real time investments are what sets us apart.
+
+      We're better than your best friend John that read the Wall Street Journal once and thinks he's a financial investor. John doesn't know what he's doing. He doesn't even go here! Just kidding .. we're sure John is a great guy but Moola's money manager is far superior. Here at Moola we focus on your spending habits and look at different recurring expenses that you may have forgotten about. We also update you on your investments and make sure you're on track to hit your financial goals.</p>
+      </div>
+    <div class="col s4">
+      <img class="image Piggybank" img src="img/piggybank.png" alt="Piggybank">
+    </div>
+  </div>
+  <BR><BR><BR>
+</div>
+
+<div class="row light-blue lighten-2 no-padding-bottom">
+  <BR>
+  <div class="container valign-wrapper">
+    <div class="col s4">
+      <BR><BR>
+      <img class="image monies" img src="img/monies.png" alt="monies">
+    </div>
+    <div class="col s8">
+      <h1>Invest like a Pro & Feel Confident in your Financial Health</h1>
+      <p>Take charge of your financial life. Invest wisely and track your spending.</p><a href="how.php" class="green darken-3 waves-effect waves-light btn"><i class="material-icons right">arrow_forward</i>See How It Works</a>
+    </div>
+  </div>
+  <BR><BR>
+</div>
+
+
+<!---FOOTER-->  
+    <?php
+      include_once("footer.php");
+    ?>
 
       <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -99,4 +82,5 @@
 
 
               </body>
+        </main>
   </html>

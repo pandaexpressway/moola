@@ -2,9 +2,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Footer -->
-<footer class="indigo darken-4">
+<footer class="page-footer indigo darken-4">
 <div class="container center">
-    <BR>
     <h5 class="white-text">Contact Us</h5>
     <ul class="white-text">
     <li>225 E Robinson St #660</li>
@@ -16,10 +15,12 @@
     <a href="#" class="fa fa-instagram"></a>
     <a href="#" class="fa fa-twitter"></a>
     <a href="#" class="fa fa-linkedin"></a>
-    <BR><BR>
-    <a class="blue-text">&#169; 2018 Moola. All Right Reserved.</a>
-   <BR><BR>
 </div>
+<div class="footer-copyright">
+            <div class="container center">
+            <a class="blue-text">&#169; 2018 Moola. All Right Reserved.</a><BR>
+            </div>
+          </div>
 </footer>
 
 
@@ -36,4 +37,15 @@
 .fa:hover {
     opacity: 0.7;
 }
+
+/* Force footer to bottom of page */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
 </style>
