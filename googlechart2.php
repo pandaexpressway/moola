@@ -182,6 +182,7 @@ $(document).ready(function(){
           $.ajax({
                url:"insert.php",
                method:"POST",
+               async: false,
                data:{bill:bill, description:description,category:category},
                dataType:"text",
                success:function(data)
@@ -393,6 +394,7 @@ FROM monthlybudget') as $row) {
 
 .fix {width: 500px;}
 .poop {margin-left: 400px;}
+.red {color: red;}
 </style>
   </head>
 
@@ -400,8 +402,20 @@ FROM monthlybudget') as $row) {
     <!--Div that will hold the pie chart-->
   <div class="poop">  <div id="chart_div"></div></div>
     <?php
-
+    $a = 2000;
+    $b = $row['SUM(bill)'];
+    $c = $a-$b;
     echo "<p>Total Amount spent:   $" . $row['SUM(bill)'] . "</p>";
+    echo "Out of a monthly income of $2000.00   ";
+    echo "<br>";
+    if ($c < 0) {
+      # code...
+        echo "<p class = 'red-text'> you have left   $" . $c ."</p>";
+    }
+
+    else{
+    echo "<p class = 'green-text'> you have left   $" . $c ."</p>";
+  }
     ?>
     <footer class="indigo darken-3">
     <div class="container">
