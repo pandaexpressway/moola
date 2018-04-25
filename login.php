@@ -1,73 +1,43 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-      <link rel="stylesheet" href="css/styles.css">
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Moola</title>
+<?php
+	session_start();
+	include("db_connectuser.php"); //connect to database
+	if((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) {//form has been submitted and if not already logged in
+		$user = $_POST['user'];
+		$pass = $_POST['pass'];
+		$pass = sha1($pass);
 
-    </head>
-
+		$sql = "SELECT * FROM users WHERE user='" . $user . "' AND pass='".$pass."' LIMIT 1"; //See if entered user/pass == user/pass in database
+		$result = mysqli_query($connection, $sql); //Execute the sql query and store result in $result
+		if (mysqli_num_rows($result) == 1){		//if account exists
+			$_SESSION['logged_in'] = true;
+			$_SESSION['logged_in_user'] = $user;
+			
+			echo "You are now logged in, " . $_SESSION['logged_in_user'] . ". You will be redirected to the home page.";
+		}else{
+			echo "Invalid user and pass";
+		}
+	} else {
+		
+	}
+	
+	
+	if (isset($_SESSION['logged_in'])) {
+		header("Refresh: 3; url=index.php");
+	}
+	
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/reset_styles.css" />
+	<link rel="stylesheet" href="css/formStyles.css" />
+</head>
     <body>
-      <!---NAV-->
-    <?php
-      include_once("navigation.php");
-    ?>
-
-      <!--MAIN-->
-  <div class="row">
-
-    <div class="col s12 m4 l2"></div>
-    <div class="col s12 m4 l8">
-      <div class="container"><br>
-        <div class="small card-panel white">
-          <center><img src="img/moola_gradient_1.png" width="224px" height="224px"></center>
-       <form method="POST" action="#">
-         <div class="input-field">
-          <i class="material-icons prefix">account_circle</i>
-           <input type="text" name="name" id="name">
-           <label class="active" for="name">Username</label>
-         </div>
-         <div class="input-field">
-          <i class="material-icons prefix">lock</i>
-           <input type="password" name="password" id="password" class="validate">
-           <label class="active" for="password">Password</label>
-         </div>
-         <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Submit</button><br></center>
-          <center><br><hr><br><p>New to moola?<a href="accountCreation.php">Register here!</a></p></center>
-       </form>
-        </div>
-      </div>
-    </div>
-     <div class="col s12 m4 l2"></div>
-  </div>
-
-
-
-  
-
-
-
-      <!---FOOTER-->  
-    <?php
-      include_once("footer.php");
-    ?>
-
-      <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    $(".button-collapse").sideNav();
-              // Init Slider
-          $('.slider').slider();
-         });  
-    </script>
-
-
-              </body>
-  </html>
+    	<form method="post" action="" class="form">
+			<span class="span1"><span class="number">2</span>&nbsp;Log-in</span><br />
+            <input name="user" id="user" type="text" placeholder="Email *"/><br />
+			<input name="pass" type="pass" placeholder="Password *"/><br />
+			<p>Don't have an account? <a href="accountCreationPrac.php">Create one!</a></p>
+			<input name="submit" id="submit" type="submit" value="Login" /><br />
+    </body>
+</html>
