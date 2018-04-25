@@ -174,6 +174,11 @@ $(document).ready(function(){
                alert("description");
                return false;
           }
+          if(category == '')
+          {
+               alert("category");
+               return false;
+          }
           $.ajax({
                url:"insert.php",
                method:"POST",
@@ -239,6 +244,7 @@ $(document).ready(function(){
      $(document).on('click', '#register', function(){
           var first_name = $('#Productname').text();
           var last_name = $('#Description').text();
+          var category = $('#category').text();
           if(first_name == '')
           {
                alert("Enter First Product Name");
@@ -247,6 +253,11 @@ $(document).ready(function(){
           if(last_name == '')
           {
                alert("Enter discription");
+               return false;
+          }
+          if(category == '')
+          {
+               alert("Enter category");
                return false;
           }
           $.ajax({
@@ -356,7 +367,8 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
         // Set chart options
         var options = {'title':'Monthly income Budget',
                        'width':700,
-                       'height':500
+                       'height':500,
+
 
 
                      };
@@ -369,7 +381,12 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
     </script>
     <?php
 }
+foreach($connection->query('SELECT SUM(bill)
+FROM monthlybudget') as $row) {
 
+//echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+
+}
 }
 ?>
 
@@ -378,6 +395,10 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
   <body>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
+    <?php
+
+    echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+    ?>
     <footer class="indigo darken-3">
     <div class="container">
     <div class="row">

@@ -73,7 +73,12 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
     </script>
     <?php
 }
+foreach($connection->query('SELECT SUM(bill)
+FROM monthlybudget') as $row) {
 
+//echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+
+}
 }
 ?>
 
@@ -110,6 +115,11 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
       <!--Div that will hold the pie chart-->
           <div id="chart_div"></div>
 
+<?php
+
+echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
+?>
+
       <div class="row center">
 
         <h5 class="header col s12 light">Todays Headlines</h5>
@@ -120,6 +130,7 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
   <div id="fb-root"></div>
 
       </div>
+
       <br><br>
       <div class="row center">
         <h2>news</h2>
