@@ -58,7 +58,7 @@
         <div class="col s12">
           <div class="card-panel">
             <div class="row">
-       <form class="s12 m4" method="POST" action="login.php">
+       <form class="s12 m4" method="POST" action="loginFunc.php">
             <div class="row">
         <h5><center> View Your Account</h5></center>
          <div class="input-field">
