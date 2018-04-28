@@ -13,6 +13,7 @@
 			$_SESSION['logged_in_user'] = $user;
 			
 			echo "You are now logged in, " . $_SESSION['logged_in_user'] . ". You will be redirected to the home page.";
+		    header("Refresh: 0; url=mooladash.php"); //Takes users to login page in 0 secs
 		}else{
 			echo "Invalid user and pass";
 		}
@@ -21,23 +22,6 @@
 	}
 	
 	
-	if (isset($_SESSION['logged_in'])) {
-		header("Refresh: 3; url=index.php");
-	}
+
 	
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet" href="css/reset_styles.css" />
-	<link rel="stylesheet" href="css/formStyles.css" />
-</head>
-    <body>
-    	<form method="post" action="" class="form">
-			<span class="span1"><span class="number">2</span>&nbsp;Log-in</span><br />
-            <input name="user" id="user" type="text" placeholder="Email *"/><br />
-			<input name="pass" type="pass" placeholder="Password *"/><br />
-			<p>Don't have an account? <a href="accountCreationPrac.php">Create one!</a></p>
-			<input name="submit" id="submit" type="submit" value="Login" /><br />
-    </body>
-</html>

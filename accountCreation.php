@@ -19,8 +19,9 @@ session_start();
 			$pass = sha1($pass);
 			$sql = "INSERT INTO users (user,pass) VALUES('$user','$pass')"; //prepare to add stats to database table
 			mysqli_query($connection, $sql); //run the query
-			echo "Account successfully created. You're now logged-in! You will be redirected to the login page in 5 seconds.";
-			header("Refresh: 3; url=index.php"); //Takes users to login page in 3 secs
+			 //Takes users to login page in 3 secs
+			 echo "Successfully inserted";
+			 header("Refresh: 0; url=mooladash.php"); //Takes users to login page in 3 secs
 		}
 		
 		
@@ -28,7 +29,6 @@ session_start();
 	} else {
 		// do nothing
 	}
-
-		
+	
 		
 ?>
