@@ -14,7 +14,7 @@ session_start();
 		
 		if (mysqli_num_rows($result) == 1){	//If at least one result
 			echo "Account already exists. Please try a new user."; //account already exists
-		
+			header("Refresh: 2; url=registration.php");
 		}else{	//If new account
 			$pass = sha1($pass);
 			$sql = "INSERT INTO users (user,pass) VALUES('$user','$pass')"; //prepare to add stats to database table

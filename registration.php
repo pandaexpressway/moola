@@ -17,29 +17,28 @@
 		  include_once("navigation.php");
 		?>
 
-
     <!--STUFF-->
 <div class="container" style="margin-top:10%;">
   <div class="row">
     <main class="col s8 offset-s2">
       <h1 style="text-align:center">Register for an Account</h1>
-      <form class="s12 m4" method="POST" action="accountCreation.php">
+      <form class="s12 m4" method="POST" id="myForm" action="accountCreation.php" onsubmit="reutrn formSubmit();">
             <div class="row">
         <h5><center> View Your Account</h5></center>
          <div class="input-field">
           <i class="material-icons prefix">account_circle</i>
            <input type="text" name="user" id="user">
-           <label class="active" for="name">Username</label>
+           <label class="active" for="name" style="margin-bottom:2%;">Username</label>
          </div>
          <div class="input-field">
           <i class="material-icons prefix">lock</i>
            <input type="password" name="pass" id="pass" class="validate">
-           <label class="active" for="password">Password</label>
+           <label class="active" for="password" style="margin-bottom:2%;">Password</label>
          </div>
-         <center><button class="waves-effect waves-light btn teal accent-4" name="submit">Sign On</button><br></center>
-          <center><br><p>New to moola? <a href="accountCreation.php">Register here!</a></p></center>
-       </form>
-
+         <center><button class="waves-effect waves-light btn teal accent-4" id="submit" name="submit">Sign up</button><br></center>
+          <center><br><p>Already have an account? <a href="index.php">Login here!</a></p></center>
+       <span id="result"></span>
+	   </form>
     </main>
 
   </div>
@@ -53,6 +52,7 @@
       <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
     <script>
     $(document).ready(function(){
     $(".button-collapse").sideNav();

@@ -12,13 +12,18 @@
 			$_SESSION['logged_in'] = true;
 			$_SESSION['logged_in_user'] = $user;
 			
-			echo "You are now logged in, " . $_SESSION['logged_in_user'] . ". You will be redirected to the home page.";
-		    header("Refresh: 0; url=mooladash.php"); //Takes users to login page in 0 secs
+				echo "You are now logged in, " . $_SESSION['logged_in_user'] . ". You will be redirected to your profile page.";
 		}else{
 			echo "Invalid user and pass";
+			header("Refresh: 2; url=index.php");
 		}
 	} else {
 		
+	}
+	
+	
+	if (isset($_SESSION['logged_in'])) {
+		header("Refresh: 0; url=mooladash.php");
 	}
 	
 	
