@@ -5,9 +5,4 @@
  {
       echo 'Data Inserted';
  }
-
-
-
-
-
  ?>

@@ -32,13 +32,13 @@
       <BR><BR>
       </div>
     <div class="col s4 center-align pull-s2">
-      <h2 class= "white-text">Budget? Bills? Not sure where to start? <BR>Moola will track it all for you!</h2>
+      <h2 class= "flow-text white-text">Budget? Bills? Not sure where to start? <BR>Moola will track it all for you!</h2>
     </div>
 </div>
 
 <div class="row light-blue darken-3 valign-wrapper">
     <div class="col s4 center-align push-s1 offset-s1">
-      <h2 class= "white-text">New Savings account.. Who dis?<BR>We'll help you track your spending so you can put money aside each month.</h2>
+      <h2 class= "flow-text white-text">New Savings account.. Who dis?<BR>We'll help you track your spending so you can put money aside each month.</h2>
     </div>
     <div class="col s7 push-s2">
       <BR><BR>
@@ -54,13 +54,13 @@
       <BR><BR>
       </div>
     <div class="col s4 center-align pull-s2">
-      <h2 class= "white-text">Investing made simple and easy to understand.</h2>
+      <h2 class= "flow-text white-text">Investing made simple and easy to understand.</h2>
     </div>
 </div>
 
 <div class="row valign-wrapper">
     <div class="col s5 center-align push-s2">
-      <h2>Ready to start saving?</h2>
+      <h2 class= "flow-text">Ready to start saving?</h2>
       <a href="registration.php" class="blue darken-3 waves-effect waves-light btn">Sign up!</a>
     </div>
     <div class="col s7 push-s1">

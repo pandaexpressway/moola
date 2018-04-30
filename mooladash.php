@@ -107,8 +107,9 @@ include_once("navigation.php");
       <br><br>
       <h1 class="header center indigo-text">My Moola Dashboard</h1>
 
-<!-- Monthly Spending Budget -->
+<!-- Dashboard -->
 <div class="row">
+  <!-- Monthly Spending Budget -->
   <div class="container">
     <div class="col s6 m6">
       <div class="card light-blue lighten-4">
@@ -135,34 +136,38 @@ include_once("navigation.php");
     </div>
   </div>
 
-<!-- Welcome Message -->
-<div class="container center-align">
-    <div class="col s3 m6">
-      <div class="card teal lighten-2">
-        <div class="card-content white-text">
-          <span class="card-title center-align">Welcome to your dashboard!</span>
-          <p class="center-align">Here you can keep track of your spending and budgets, see the latest news feed, check stocks, and more!</p>
+  <!-- Welcome Message -->
+  <div class="container">
+      <div class="col s3 m6">
+        <div class="card teal lighten-2">
+          <div class="card-content white-text">
+            <span class="card-title center-align">Welcome to your dashboard!</span>
+            <p class="center-align">Here you can keep track of your spending and budgets, see the latest news feed, check stocks, and more!</p>
+          </div>
         </div>
       </div>
-    </div>
-</div>    
+    </div> 
+
+</div>   
 
 <!-- Pie Chart -->
-<div class="container center-align">
-    <div class="col s12 m6 center-align">
+<div class="container valign">
+    <div class="col s9 valign center-align">
       <div class="card blue darken-4">
-        <div class="card-content white-text">
-          <div class="poop"> <div id="chart_div"></div></div>
+        <div class="card-content">
+          <center>
+          <div id="chart_div">
+          </div>
+          </center>
         </div>
       </div>
     </div>
-  </div>
-</div>  
+</div> 
 
 <!-- Sort -->
 
 
-<!-- Stock TIcker -->
+<!-- Stock Ticker -->
 <div class="container center-align">
 <div class="col s6 m6">
     <div class="card blue lighten-4">
@@ -188,7 +193,7 @@ include_once("navigation.php");
 </div>
 
 <!-- News -->
-<div class="container center-align">
+<div class="row center-align">
     <div class="col s12">
       <div class="card green lighten-2">
         <div class="card-content">

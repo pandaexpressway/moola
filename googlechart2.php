@@ -24,7 +24,7 @@
 <body>
 
   <nav class="indigo darken-3">
-      <a href="index.php" class="brand-logo"><img src="img/moola_gradient_1.png" width="64px" height="64px"></a>
+      <a href="index.php" class="brand-logo"><img src="img/moola_logo.png" width="64px" height="64px"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.php" class="white-text">Home</a></li>
@@ -69,7 +69,7 @@
               <br />
               <br />
               <div id="ab">Fetch Results By:</div><div class="table-responsive">
-                   <h3 align="center">My Budget</h3><br />
+                   <h3 align="center">spending management</h3><br />
                    <select id="fetchval" name="fetchby" style="display:table;" >
                          <option value="rent">rent</option>
                          <option value="car">car</option>
@@ -174,15 +174,9 @@ $(document).ready(function(){
                alert("description");
                return false;
           }
-          if(category == '')
-          {
-               alert("category");
-               return false;
-          }
           $.ajax({
                url:"insert.php",
                method:"POST",
-               async: false,
                data:{bill:bill, description:description,category:category},
                dataType:"text",
                success:function(data)
@@ -245,7 +239,6 @@ $(document).ready(function(){
      $(document).on('click', '#register', function(){
           var first_name = $('#Productname').text();
           var last_name = $('#Description').text();
-          var category = $('#category').text();
           if(first_name == '')
           {
                alert("Enter First Product Name");
@@ -254,11 +247,6 @@ $(document).ready(function(){
           if(last_name == '')
           {
                alert("Enter discription");
-               return false;
-          }
-          if(category == '')
-          {
-               alert("Enter category");
                return false;
           }
           $.ajax({
@@ -368,8 +356,7 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
         // Set chart options
         var options = {'title':'Monthly income Budget',
                        'width':700,
-                       'height':500,
-
+                       'height':500
 
 
                      };
@@ -382,41 +369,15 @@ echo "['".$row['description']."',".$row['bill']."],"; ?>
     </script>
     <?php
 }
-foreach($connection->query('SELECT SUM(bill)
-FROM monthlybudget') as $row) {
 
-//echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
-
-}
 }
 ?>
-<style>
 
-.fix {width: 500px;}
-.poop {margin-left: 400px;}
-.red {color: red;}
-</style>
   </head>
 
   <body>
     <!--Div that will hold the pie chart-->
-  <div class="poop">  <div id="chart_div"></div></div>
-    <?php
-    $a = 2000;
-    $b = $row['SUM(bill)'];
-    $c = $a-$b;
-    echo "<p>Total Amount spent:   $" . $row['SUM(bill)'] . "</p>";
-    echo "Out of a monthly income of $2000.00   ";
-    echo "<br>";
-    if ($c < 0) {
-      # code...
-        echo "<p class = 'red-text'> you have left   $" . $c ."</p>";
-    }
-
-    else{
-    echo "<p class = 'green-text'> you have left   $" . $c ."</p>";
-  }
-    ?>
+    <div id="chart_div"></div>
     <footer class="indigo darken-3">
     <div class="container">
     <div class="row">

@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <!--Import Google Icon Font-->
@@ -26,7 +26,7 @@
       <img class="image secure" img src="img/secure.png" alt="secure"><BR>
     </div>
     <div class="col s4">  
-      <p class="white-text">Our online money manager Moola, is employed with multi-level safeguards including TLS 1.2 encryption to protect your data - and we never sell your data, either. *cough Zuckerberg*</p>
+      <p class="flow-text white-text">Our online money manager Moola, is employed with multi-level safeguards including TLS 1.2 encryption to protect your data - and we never sell your data, either. *cough Zuckerberg*</p>
     </div>
   </div>
 </div>
@@ -35,7 +35,7 @@
   <BR>
   <div class="container valign-wrapper">
     <div class="col s6">
-      <p class="white-text">Created by 7 financially savvy University of Central Florida Students, we understand that students and professionals alike need to be able to see their financial status digitized. Our online budget tracker and investing tools can help keep you and your bank account happy.</p>
+      <p class="flow-text white-text">Created by 7 financially savvy University of Central Florida Students, we understand that students and professionals alike need to be able to see their financial status digitized. Our online budget tracker and investing tools can help keep you and your bank account happy.</p>
     </div>
     <div class="col s6">
       <BR><BR>

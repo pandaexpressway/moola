@@ -116,10 +116,8 @@ $(".button-collapse").sideNav();
 </html>
 <script>
 $(document).ready(function(){
-
      function fetch_data()
      {
-
           $("#fetchval").on('change',function()
                            {
                              console.log(' is this working');
@@ -135,7 +133,6 @@ $(document).ready(function(){
                   beforeSend:function()
                   {
                       $("#table-container").html('Working...');
-
                   },
                   success:function(data)
                   {
@@ -178,7 +175,6 @@ $(document).ready(function(){
                }
           })
      });
-
      function edit_data(id, text, column_name)
      {
           $.ajax({
@@ -297,14 +293,11 @@ $(document).ready(function(){
                });
           }
      });
-
 });
-
 </script>
 <?php
  error_reporting (E_ALL ^ E_NOTICE);
 include("db_connect.php");
-
 $sql = "SELECT * FROM monthlybudget";
 $result = mysqli_query($connection, $sql);
 ?>
@@ -313,7 +306,6 @@ if($result->num_rows > 0)
  {
    while($row = mysqli_fetch_array($result))
    {
-
      ?>
 
 <html>
@@ -322,62 +314,41 @@ if($result->num_rows > 0)
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
-
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-
       function drawChart() {
-
-
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Amount');
         data.addColumn('number', '$');
         data.addRows([
-
-
           <?php  while($row = mysqli_fetch_array($result))
-
 echo "['".$row['description']."',".$row['bill']."],"; ?>
-
-
-
         ]);
-
         // Set chart options
         var options = {'title':'Monthly income Budget',
                        'width':700,
                        'height':500,
-
-
-
                      };
-
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-
       }
     </script>
     <?php
 }
 foreach($connection->query('SELECT SUM(bill)
 FROM monthlybudget') as $row) {
-
 //echo "<p>Total Amount spent:   " . $row['SUM(bill)'] . "$</p>";
-
 }
 }
 ?>
 <style>
-
 .fix {width: 500px;}
 .poop {margin-left: 400px;}
 .red {color: red;}
@@ -398,13 +369,17 @@ FROM monthlybudget') as $row) {
       # code...
         echo "<p class = 'red-text'> you have left   $" . $c ."</p>";
     }
-
     else{
     echo "<p class = 'green-text'> you have left   $" . $c ."</p>";
   }
     ?>
+
+
+<!---FOOTER-->  
     <?php
-    include("navigation.php");
-     ?>
+      include_once("footer.php");
+    ?>
+
+    
   </body>
 </html>
